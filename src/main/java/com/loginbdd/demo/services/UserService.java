@@ -34,6 +34,7 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         testUser user = repo.findByUsername(username);
+
         if (user == null) {
             System.out.println("Ca voit que dalle");
             throw new UsernameNotFoundException("No user present with username : " + username);
